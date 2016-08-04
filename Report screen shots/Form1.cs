@@ -180,7 +180,6 @@ namespace Report_screen_shots
             advertisers.Add("HarrenMedia");
             advertisers.Add("BabaNetwork");
             advertisers.Add("");
-            advertisers.Add("");
             advertisers.Add("Yaniv");
             adv_list = advertisers;
             listView1.View = View.Details;
