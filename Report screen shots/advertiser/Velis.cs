@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+
+
 namespace Report_screen_shots.advertiser
 {
     class Velis
@@ -25,6 +27,7 @@ namespace Report_screen_shots.advertiser
 
         public void Get_reports_screen_shots(IWebDriver driver, Report_data report)
         {
+           
             Func.check_if_folder_exists(folder_path);
             TextWriter tw = Func.check_if_log_file_exists(file_path);
             try
@@ -42,7 +45,10 @@ namespace Report_screen_shots.advertiser
                     Thread.Sleep(1000);
                     driver.FindElement(By.ClassName("ui-daterangepicker-ThepreviousMonth")).Click();
                     Thread.Sleep(1500);
+                    driver.FindElement(By.XPath(".//*[@id='ctrlAnalytics_rdoGraphTableAnalytics']/label[2]/span")).Click();
+                    Thread.Sleep(1000);
                     Func.take_screenshot(report.campaign_name, folder_path);
+
                     Func.clear_local_storage(driver);
                     tw.Close();
                 }

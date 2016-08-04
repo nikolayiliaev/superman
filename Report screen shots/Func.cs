@@ -53,7 +53,7 @@ namespace Report_screen_shots
         {
             for (int i = 0; i <= 2; i++)
             {
-                if (driver.Url == url)
+                if (driver.Url.Equals(url))
                 {
                     i++;
                     Thread.Sleep(5000);
@@ -61,11 +61,25 @@ namespace Report_screen_shots
                 else
                     return true;
             }
-            if (driver.Url == url)
+            if (driver.Url.Equals(url))
                 return false;
             else
                 return true;
         }
-        
+
+        public static bool check_login_ply2c(IWebDriver driver, string url)
+        {
+            try
+            {
+                driver.FindElement(By.XPath(".//*[@id='component-1024']"));
+                return true;
+            }
+
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
     }
 }

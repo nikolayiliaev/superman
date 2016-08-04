@@ -46,7 +46,7 @@ namespace Report_screen_shots.advertiser
                     Thread.Sleep(5000);
                     int document_height = Convert.ToInt32((string)js.ExecuteScript("return document.body.scrollHeight").ToString());
                     int client_height = Convert.ToInt32((string)js.ExecuteScript("return document.body.clientHeight").ToString());
-                    //if you need to scroll down the page and take enother screenshot write + 1  to number_of_screen_shote
+                    //if you need to scroll down and take enother screenshot write + 1  to number_of_screen_shote
                     int number_of_screen_shot = (document_height / client_height);
                     for (int i = 0; i < number_of_screen_shot; i++)
                     {

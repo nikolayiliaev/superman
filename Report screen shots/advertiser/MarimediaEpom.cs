@@ -31,7 +31,7 @@ namespace Report_screen_shots.advertiser
             try
             {
                 login(driver, "Webpic Support", "d09f8fc0");
-                var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
                 Thread.Sleep(5000);
                 string url = login_url + "/account/home.do#|analytics";
                 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;

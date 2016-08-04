@@ -32,11 +32,14 @@ namespace Report_screen_shots.advertiser
                 login(driver, report.login_user, report.login_pass);
                 if (Func.check_login(driver, login_url))
                 {
-                    var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(0.5));
-                    wait.Until(payments_tab => payments_tab.FindElement(By.Id("paytab"))).FindElement(By.TagName("a")).Click();
-                    wait.Until(report_show => report_show.FindElement(By.Id("money")));
-                    wait.Until(last_month => last_month.FindElement(By.XPath(".//*[@id='mainForm:j_idt1125']"))).Click();
-                    Thread.Sleep(1500);
+                    var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+                        
+                        wait.Until(payments_tab => payments_tab.FindElement(By.Id("paytab"))).FindElement(By.TagName("a")).Click();
+                        wait.Until(report_show => report_show.FindElement(By.Id("money")));
+                     
+                 
+                    Thread.Sleep(15000);
                     Func.take_screenshot(report.campaign_name, folder_path);
                     Func.clear_local_storage(driver);
                     tw.Close();

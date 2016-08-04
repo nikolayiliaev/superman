@@ -165,11 +165,12 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(302, 73);
+            this.listView1.Location = new System.Drawing.Point(303, 121);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(150, 668);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
             // progressBar
@@ -183,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 809);
+            this.ClientSize = new System.Drawing.Size(507, 850);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

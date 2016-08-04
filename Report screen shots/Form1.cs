@@ -179,6 +179,7 @@ namespace Report_screen_shots
             advertisers.Add("Mango");
             advertisers.Add("HarrenMedia");
             advertisers.Add("BabaNetwork");
+            
             adv_list = advertisers;
             listView1.View = View.Details;
             listView1.GridLines = true;
@@ -526,6 +527,11 @@ namespace Report_screen_shots
         private void Form1_Load(object sender, EventArgs e) { }
         private void listView1_Click(object sender, EventArgs e) { }
         private void checkBox_banner_CheckedChanged(object sender, EventArgs e) { }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

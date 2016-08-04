@@ -31,9 +31,9 @@ namespace Report_screen_shots.advertiser
             try
             {
                 login(driver, report.login_user, report.login_pass);
-                if (Func.check_login(driver, login_url))
+                if (Func.check_login_ply2c(driver, login_url))
                 {
-                    var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
+                    var wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
                     int camp_id = get_campaign_id(report.campaign_name);
                     if (camp_id != -1)
                     {
@@ -63,7 +63,16 @@ namespace Report_screen_shots.advertiser
             catch (Exception e)
             {
                 tw.WriteLine(report.campaign_name + " Exception while screen shot try again");
-                Func.clear_local_storage(driver);
+                try
+                {
+                    Func.clear_local_storage(driver);
+                }
+
+                catch 
+                {
+                    tw.Close();
+                }
+
                 tw.Close();
             }
         }
