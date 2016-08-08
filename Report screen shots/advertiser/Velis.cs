@@ -32,7 +32,7 @@ namespace Report_screen_shots.advertiser
             TextWriter tw = Func.check_if_log_file_exists(file_path);
             try
             {
-                var wait_login = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                var wait_login = new WebDriverWait(driver, TimeSpan.FromMinutes(3));
                 driver.Navigate().GoToUrl(login_url);
                 wait_login.Until(user_name => user_name.FindElement(By.Id("memberId"))).SendKeys(report.login_user);
                 wait_login.Until(password => password.FindElement(By.Name("password"))).SendKeys(report.login_pass);
