@@ -18,7 +18,7 @@ namespace Report_screen_shots.advertiser
 
         public Propellerads(string path)
         {
-            this.login_url = "http://v2.propellerads.com/#/auth/";
+            this.login_url = "https://v2.propellerads.com/#/auth/";
             this.folder_path = path + "\\Propellerads";
             this.file_path = path + "\\Propellerads\\Propellerads_log.txt";
         }
@@ -46,6 +46,7 @@ namespace Report_screen_shots.advertiser
                     Thread.Sleep(10000);
                     Func.take_screenshot(report.campaign_name , folder_path);
                     Func.clear_local_storage(driver);
+
                     driver.FindElement(By.ClassName("header__logout")).Click();
                     tw.Close();
 

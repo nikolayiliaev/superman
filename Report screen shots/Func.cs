@@ -50,7 +50,7 @@ namespace Report_screen_shots
         }
 
         public static bool check_login(IWebDriver driver, string url)
-        {
+       {
             for (int i = 0; i <= 2; i++)
             {
                 if (driver.Url.Equals(url))
